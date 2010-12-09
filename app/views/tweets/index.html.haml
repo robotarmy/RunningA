@@ -1,0 +1,6 @@
+%h4 
+  = link_to "Incoming Tweets",root_path
+.index
+  -Tweet.all(:order => 'created_at', :limit => 15).each do |tweet|
+    :javascript
+      Tweet(#{tweet.json},'.index')
