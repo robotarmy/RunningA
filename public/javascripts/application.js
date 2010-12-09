@@ -16,9 +16,8 @@ window.inject_tweet = function(tweet,location) {
   save.click(function(){
     jQuery.post("/tweets",
                 {tweet:{json:tweet}},
-                function(data){
+                  function(data){
                   var id = el.attr('id')
-                  console.log('#'+id)
                   jQuery('#'+id).fadeOut()
                 })
   })
@@ -28,13 +27,7 @@ window.inject_tweet = function(tweet,location) {
   if (location)
     jQuery(location).append(el)
 }
-jQuery(document).ready(function() {
-  jQuery('body .load').ajaxStart(function(){
-    $(this).show();
-  })
-  jQuery('body .load').ajaxStop(function(){
-    $(this).hide();
-  })
+window.load_tweets = function() {
   jQuery.getJSON("http://search.twitter.com/search.json\?result_type=recent&q='a'&callback=?",
                  function(data){
     if (data.results) {
@@ -43,4 +36,13 @@ jQuery(document).ready(function() {
       }
     }
   })
+}
+jQuery(document).ready(function() {
+  jQuery('body .load').ajaxStart(function(){
+    $(this).show();
+  })
+  jQuery('body .load').ajaxStop(function(){
+    $(this).hide();
+  })
+  load_tweets();
 })
