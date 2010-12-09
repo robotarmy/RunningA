@@ -1,0 +1,47 @@
+$light: #fafafa;
+$medium: #dadada;
+$medium1: $medium + #121212;
+$hightlight:#9AD10B;
+
+body {
+  * {
+    font-family: "Helvetica Neue", 'Helvetica', 'Lucida Grande',sans-serif;
+    font-weight: 400;
+    padding:0px;
+    margin:0px;
+    background:$medium;
+  }
+  .load {
+   display:none;
+  }
+
+  .tweet {
+    margin:1em;
+    padding:1em;
+    border:2px solid $hightlight;
+    background:$light; 
+    * {
+      display:none;
+      background:$medium1;
+    }
+    .text,a{
+      font-weight: 300;
+      padding:3px;
+      display:inline-block;
+      font-size:2em;
+    } 
+    a { 
+      margin-top:5px;
+      display:block;
+      text-align:center;
+      background:$light; 
+      font-size:1em;
+      border: 1px solid black;
+    }
+    a:hover { 
+      background:#ccc;
+      font-size:1.1em;
+    }
+    display:block;
+  }
+}
