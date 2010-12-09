@@ -1,5 +1,12 @@
-%h1
-  = image_tag('running_a.png')
-%h1 Running A 
-%h2 
-  = Tweet.count
+%h4 
+  = link_to tweets_path,tweets_path
+:javascript
+  jQuery(document).ready(function() {
+    jQuery('body .load').ajaxStart(function(){
+      $(this).show();
+    })
+    jQuery('body .load').ajaxStop(function(){
+      $(this).hide();
+    })
+    load_tweets({save:true});
+  })

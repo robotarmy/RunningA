@@ -16,4 +16,12 @@ class TweetsControllerTest < ActionController::TestCase
       }
     }
   end
+  test "no duplicate create" do
+    post :create, :tweet => {:json => "{'text':'heya'}"}
+    assert {
+      rescuing {
+        post :create, :tweet => {:json => "{'text':'heya'}"}
+      }
+    }
+  end
 end
