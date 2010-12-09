@@ -4,6 +4,10 @@ $medium1: $medium + #121212;
 $hightlight:#9AD10B;
 
 body {
+  h1 img {
+    float:right;
+    clear:both;
+  }
   * {
     font-family: "Helvetica Neue", 'Helvetica', 'Lucida Grande',sans-serif;
     font-weight: 400;
